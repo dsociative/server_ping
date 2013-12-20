@@ -10,7 +10,7 @@ setup(
         ]
     },
     dependency_links=[
-      "git+https://github.com/dsociative/socket_server2.git@client_fix#egg=socket_server2-0.0.0",
+      "https://github.com/dsociative/socket_server2/archive/client_fix.zip#egg=socket_server2-0.0.0",
     ],
     install_requires=[
         'socket_server2'
