@@ -1,4 +1,5 @@
 # -*- coding: utf8 -*-
+import socket
 import argparse
 import timeit
 
@@ -18,9 +19,16 @@ def send():
     sender.recv()
 
 
+def measure():
+    try:
+        return timeit.timeit(
+            "send()",
+            setup="from server_ping.ping import send",
+            number=1
+        )
+    except socket.error:
+        return -1
+
+
 def main():
-    print timeit.timeit(
-        "send()",
-        setup="from server_ping.ping import send",
-        number=1
-    )
+    print measure()
